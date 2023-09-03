@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({
   storage: storage,
-  limits: { fileSize: 1000000 }, // Limit file size to 1MB
+  limits: { fileSize: 1000000 },
   fileFilter: function (req, file, cb) {
     const fileTypes = /jpeg|jpg|png/;
     const extname = fileTypes.test(
@@ -26,7 +26,7 @@ const upload = multer({
       cb(new Error("Error: Only JPEG and PNG images are allowed."));
     }
   },
-}).single("file"); // Change 'array' to 'single' to upload a single file
+}).single("file");
 
 module.exports = {
   upload,
