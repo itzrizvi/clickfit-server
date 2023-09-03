@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const uploadModel = require("../models/uploadModel");
 
+// Route Declaration and Controller Response Handler
 router.post("/uploadimages", (req, res) => {
   uploadModel.upload(req, res, (err) => {
     if (err) {
